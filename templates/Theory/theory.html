@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% load staticfiles %}
+    <p>Теория:</p>
+    <p>Здесь вы можете найти список теоритического материала, а так-же перейти к соответствующим заданиям к ним.</p>
+    {% for theor in theory %}
+        <br>
+        <fieldset class = 'tasks'>
+        <legend><img src="{{   theor.image.url }}" width="40px" height="30px"> {{ theor.title }}</legend>
+      <p class="Theory">{{ theor.task }}</p>
+        <a href ='/tasks/{{ theor.slug }}/'>{{ theor.title}}</a>
+       </fieldset>
+        <br>
+    {% endfor %}
+    <p> Здесь будет пагинация </p>
+
+
+{% endblock %}

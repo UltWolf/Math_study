@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+    {% if user_p %}
+        <p>Ник пользователя: {{ user_p.username }}</p>
+        {% if user_d.website %}
+        <p>Сайт пользователя:<a href="{{ user_d.website }}">{{ user_d.website }}</a> </p>
+    {% endif %}
+            {% if user_d.school %}
+        <p> Школа пользователя или другое учебное заведение : {{ user_d.school }}</p>
+                {% endif %}
+        <p>Рожа пользователя: </p>
+        <img src=" {{ user_d.picture.url }} ">
+    {% else %}
+Пользователь не создан
+    {% endif %}
+
+{% endblock  %}

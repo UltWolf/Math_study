@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+    {% if theo %}
+        {{ theo.title }}
+        {% if task %}
+            {% for tas in task %}
+            {{ tas.tasks }}
+            <form>
+            <input type="submit" value="Проверить">
+            </form>
+            {% endfor %}
+        {% else %}
+        <p> У вас нет активных заданий из этой области</p>
+        {% endif %}
+    {% else %}
+        <p>Страница не создана титульная</p>
+    {% endif %}
+{% endblock %}

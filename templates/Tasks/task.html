@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+    <p align="center">Список всех нерешенных заданий:</p>
+    <hr>
+    {% for tas in task %}
+        <br>
+         <p>Это задание из категории:  {{ tas.Theor.title }} </p>
+        <p>Описание задания: </p>{{ tas.tasks }}
+        <p>Приступить к решению?</p>
+        <br>
+        <hr>
+
+    {% endfor %}
+{% endblock %}
